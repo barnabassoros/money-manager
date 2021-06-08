@@ -1,0 +1,14 @@
+table {
+  width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 90%;
+    margin-top:2%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+

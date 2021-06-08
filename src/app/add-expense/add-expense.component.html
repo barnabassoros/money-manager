@@ -1,0 +1,43 @@
+<div class="container">
+    
+  <form (submit)="expenseSubmit()">
+      <div class="head">Expense</div>
+<mat-form-field>
+  <input id="date" matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="dateFormControl" required>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="categoryFormControl.hasError('required')">
+      This field is required
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field>
+    <input id="amount" matInput type="number" placeholder="Amount" [formControl]="amountFormControl" required>
+    <span matPrefix>$&nbsp;</span>
+    <mat-error *ngIf="categoryFormControl.hasError('required')">
+        This field is required
+    </mat-error>
+</mat-form-field>
+
+<mat-form-field>
+    <input id="desc" matInput  placeholder="Description" [formControl]="descriptionFormControl" required>
+    <mat-error *ngIf="categoryFormControl.hasError('required')">
+        This field is required
+    </mat-error>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-select placeholder="Category" [formControl]="categoryFormControl" required>
+      <mat-option *ngFor="let category of categories"  [value]="category.id">
+        {{category.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="categoryFormControl.hasError('required')">
+        This field is required
+    </mat-error>
+  </mat-form-field>
+
+
+  <button  type="submit" mat-raised-button color="primary" >Add</button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <mat-card *ngFor="let category of categories">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{category.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-icon-button (click)="openEditDialog(category)"><mat-icon>edit</mat-icon></button>
+      <button matTooltip="Only categories without assigned values can be deleted" mat-icon-button (click)="deleteCategory(category.id)"><mat-icon>delete</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<button class="addButton" mat-raised-button color="primary" (click)="addCategory()">Add</button>
